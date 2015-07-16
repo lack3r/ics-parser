@@ -5,7 +5,7 @@ sed -i 's/^........//' basic2.ics #remove SUMMARY:
 awk '/^DTSTART.*$/' basic.ics > basic3.ics
 sed -i 's/........$//' basic3.ics
 paste basic3.ics basic2.ics > basic.ics
-awk '!/^.*VALUE=DATE.*$/' basic.ics > basic2.ics #some events in gcal have wierd date notation
+awk '!/^.*VALUE=DATE.*$/' basic.ics > basic2.ics #some events in gcal have weird date notation
 sed -i 's/:/: /g' basic.ics
 sed -i 's/^.........//' basic.ics
 DATE="$(date +'%Y%m%d')" #remove past events
