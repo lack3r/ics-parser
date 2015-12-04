@@ -1,5 +1,5 @@
 #!/bin/bash
-curl https://www.google.com/calendar/ical/<<INSERT YOUR URL HERE>>/basic.ics > basic.ics
+curl https://calendar.google.com/calendar/ical/<<INSERT YOUR URL HERE>>/basic.ics > basic.ics
 awk '/^SUMMARY.*$/' basic.ics > basic2.ics #retain summary text and start event start date
 sed -i 's/^........//' basic2.ics #remove SUMMARY: 
 awk '/^DTSTART.*$/' basic.ics > basic3.ics
